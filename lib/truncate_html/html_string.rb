@@ -9,7 +9,7 @@ module TruncateHtml
       '\p{So}' + # Match unicode other symbols
       '[\p{Sm}&&[^<]]' + # Match unicode math symbols except ascii <. < opens html tags.
       '[\p{Zs}&&[^\s]]' + # Match unicode space characters except \s+
-      %q(\|＾｀￣`~!@#\$%^&*\(\)\-_\+=\[\]{}:;'²³§",\.\/?) + # Match some special characters
+      %q(\|＾｀￣`~!@#\$%^&*\(\)\-_\+=\[\]{}:;'²³₁₂₃§",\.\/?) + # Match some special characters
       '[[:punct:]]' # Don't gobble up chinese punctuation characters
     REGEX = %r{
       (?:<script.*>.*<\/script>)+ # Match script tags. They aren't counted in length.
